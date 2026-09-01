@@ -1,0 +1,15 @@
+services:
+  backend-1:
+    build: ./backend
+    environment:
+      SERVER_NAME: backend-1
+
+  backend-2:
+   build: ./backend
+   environment:
+    SERVER_NAME: backend-2
+
+  load-balancer:
+    build: ./load-balancer
+    ports:
+      - "8000:8000"
